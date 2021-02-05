@@ -2,7 +2,7 @@ import * as Contacts from 'expo-contacts'
 
 import { useMutation, useQueryClient } from 'react-query'
 
-const deleteContact = async () => {
+const deleteContact = async (id) => {
 	const deletedId = await Contacts.removeContactAsync(id)
 	return deletedId
 }
@@ -10,7 +10,7 @@ const deleteContact = async () => {
 export const useDeleteContact = () => {
 	const queryClient = useQueryClient()
 	return useMutation(id => deleteContact(id), {
-		onMutate: async () => {
+		onMutate: async (deletedId) => {
 			await queryClient.cancelQueries('contacts')
 			// Get 'contacts' value from cache
 			const previousContacts = queryClient.getQueryData('contacts')

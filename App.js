@@ -2,9 +2,9 @@ import * as React from 'react'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { ColorScheme } from './src/utils/ColorScheme'
-import { ContactScreen } from './src/components/ContactScreen'
-import { ContactsScreen } from './src/components/ContactsScreen'
+import { ColorScheme } from './utils/ColorScheme'
+import { ContactScreen } from './components/ContactScreen'
+import { ContactsScreen } from './components/ContactsScreen'
 import IonIcon from 'react-native-vector-icons/Ionicons'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'react-native'
