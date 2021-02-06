@@ -25,8 +25,7 @@ export const useDeleteContact = () => {
 					// Add the filtered array along with the unchanged pageParam to the newPageArray
 					newPageArray.push({ page: newDataArray, pageParam: contactsArray.pageParam })
 				})
-				// Updated pages without filtered value
-				// Make sure the data structure is correct
+				// Make sure the data structure is correct and update!
 				queryClient.setQueryData('contacts', {
 					pages: newPageArray,
 					pageParams: previousContacts.pageParams,
